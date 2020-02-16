@@ -20,3 +20,8 @@ steps:
 - task: TerraformInstaller@0
   inputs:
     terraformVersion: '0.12.18'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'netautoartifact'
+    publishLocation: 'Container'
